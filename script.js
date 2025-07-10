@@ -1,5 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
+let round = 0;
+
+const roundText = document.querySelector('#round');
+const results = document.querySelector('#results');
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -13,34 +17,34 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
-    console.log("It's a tie")
-  } else if (humanChoice === 'rock' && computerChoice === 'paper' ||
-             humanChoice === 'paper' && computerChoice === 'scissors' ||
-             humanChoice === 'scissors' && computerChoice === 'rock') {
-                console.log(`You lose! ${computerChoice} beats ${humanChoice}`)
-                computerScore++
-             }
-    else {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`)
-        humanScore++
+    results.textContent = `It's a tie!`
+  } else if (
+    (humanChoice === "rock" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "rock")
+  ) {
+    results.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+    computerScore++;
+  } else {
+    results.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+    humanScore++;
+  }  
+  roundText.textContent = `Round: ${++round}`
+  checkWinner()
+}
+
+
+function checkWinner() {
+  if (humanScore === 5) {
+      results.textContent = `Congratulations you won ${humanScore} to ${computerScore}`;
+      return;
+    } else if (computerScore === 5) {
+      results.textContent = `Sorry you lost ${computerScore} to ${humanScore}`;
+      return;
     }
-}
-
-function playGame() {
-
-  for(let round = 1; round < 6; round++) {
-    console.log(`Round ${round}`)
-    const humanSelection = getHumanChoice().toLowerCase();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection)
   }
 
-  if (humanScore > computerScore) {
-    console.log(`Congratulations you won ${humanScore} to ${computerScore}`);
-    return
-  } else if (computerScore > humanScore) {
-    console.log(`Sorry you lost ${computerScore} to ${humanScore}`);
-    return
-  }
-  console.log(`It's a tie! ${humanScore} - ${computerScore}`)
-}
+const btns = document.querySelectorAll('.btn');
+btns.forEach(btn  => {
+  btn.addEventListener('click', (e) => playRound(e.target.value, getComputerChoice()))
+})
