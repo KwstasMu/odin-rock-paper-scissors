@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
 
-    <button class="btn" id="rock" value="rock">Rock</button>
-    <button class="btn" id="paper" value="paper">Paper</button>
-    <button class="btn" id="scissors" value="scissors">Scissors</button>
+    <div class="container" id="titleContainer">
+        <h1 id="title">How about some rock, paper, scissors?</h1>
+    </div>
+
+    <div class="container" id="buttons">
+        <button class="btn" id="rock">Rock</button>
+        <button class="btn" id='paper'>Paper</button>
+        <button class="btn" id="scissors">Scissors</button>
+    </div>
     
 
-    <div>
+    <div class="container" id="text">
         <h1 id="round"></h1>
         <h2 id="results"></h2>
     </div>
+
+    <div class="container">
+        <button id="replay">Replay?</button>
+    </div>
+    
+    <footer>
+        <p id="footerText">Hey the picture is from Hunter x Hunter. The protagonist has an ability called jajanken and it has to do with rock, paper, scissors.
+        I swear it's relevant!
+        </p>
+
+    </footer>
     
     <script src="script.js" ></script>
 </body>

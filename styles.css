@@ -1,0 +1,81 @@
+html {
+    background: url(hqdefault.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px red;
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#titleContainer {
+    background: black;
+    text-align: center;
+    height: 50px;
+    padding-top: 20px;
+}
+
+#title {
+    width: 100%;
+}
+
+
+#buttons {
+    padding: 20px 200px;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.btn, #replay {
+    background: radial-gradient(rgba(0, 0, 0, 0.5) 40%, rgba(102, 15, 24, 0.7));
+    text-shadow: 1px 1px red;
+    color: white;
+    height: 80px;
+    width: 150px;
+    max-width: 200px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px 4px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    font-size: 30px;
+}
+
+#replay {
+    max-width: 200px;
+    flex:1 150px;
+    display: none;
+}
+
+p {
+    font-size: 25px;
+}
+
+#text {
+    padding: 30px 200px;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+footer {
+    background-color: black;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    align-items: end;
+}
+
+#footerText {
+    font-size: 10px;
+    
+}
